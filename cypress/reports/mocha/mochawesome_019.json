@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-09T08:17:11.664Z",
+    "end": "2023-08-09T08:17:12.116Z",
+    "duration": 452,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "8a7fef67-6247-4bde-a0cd-b6bd0d62c192",
+      "title": "",
+      "fullFile": "cypress\\e2e\\footer.cy.js",
+      "file": "cypress\\e2e\\footer.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60cdbbb0-c0cb-45fe-9dc0-300602aeab25",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check id the copywrite content is visible",
+              "fullTitle": "template spec Check id the copywrite content is visible",
+              "timedOut": null,
+              "duration": 268,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('span[class=\"margin-right:10px;\"]').should(\"be.visible\").should(\"not.be.empty\").contains(\"© Copyright 2022, CLT Impact Investors. All Rights Reserved.\");",
+              "err": {
+                "message": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `template spec`",
+                "estack": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `template spec`\n    at Context.eval (webpack:///./cypress/e2e/footer.cy.js:3:13)",
+                "diff": null
+              },
+              "uuid": "4a578ff0-9d3e-42f0-a26e-1f5193065256",
+              "parentUUID": "60cdbbb0-c0cb-45fe-9dc0-300602aeab25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check id the contact email is visible",
+              "fullTitle": "template spec Check id the contact email is visible",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#homePageAlt > .tatsu-fullscreen-wrap > .tatsu-section-pad > .tatsu-row-full-width > #homeFooter > .tatsu-column > .tatsu-column-inner > .tatsu-column-pad-wrap > .tatsu-column-pad > .tatsu-module > .tatsu-text-inner > p ').find(\"a\", \"href\", \"mailto:invest@cltimpact.com\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "1bbd8bfb-1d9e-40d5-9c2f-0953a4836dd9",
+              "parentUUID": "60cdbbb0-c0cb-45fe-9dc0-300602aeab25",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4a578ff0-9d3e-42f0-a26e-1f5193065256"
+          ],
+          "pending": [],
+          "skipped": [
+            "1bbd8bfb-1d9e-40d5-9c2f-0953a4836dd9"
+          ],
+          "duration": 268,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

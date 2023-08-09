@@ -17,12 +17,12 @@ describe('template spec', () => {
 
   it("Check if the accordion  is visible, clickable and if its content is available", () => {
     cy.get('#homeBoxTop')
-    .find("h3")
-    .should("have.length", 3)
-    .click({multiple: true})
-    
-    .get('.accordion-content > .accordion-content-inner > .box-wrap > div')
-    .should('have.class', 'box-body', 'not.be.empty')
-    .should("have.length", 6)
+      .find("h3")
+      .should("have.length", 3)
+      .click({ multiple: true })
+
+      .get('.accordion-content > .accordion-content-inner > .box-wrap > div')
+      .should('have.class', 'box-body', 'not.be.empty')
+      .should("have.length", 6)
   })
 })

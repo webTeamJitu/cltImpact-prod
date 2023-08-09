@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-09T08:09:47.561Z",
+    "end": "2023-08-09T08:09:48.064Z",
+    "duration": 503,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "61fa121e-a4fa-41cc-8c9b-607774c51ab6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\team.cy.js",
+      "file": "cypress\\e2e\\team.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee7760a6-938c-4609-a641-f1220443c3c6",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "load founders images on the teams page",
+              "fullTitle": "template spec load founders images on the teams page",
+              "timedOut": null,
+              "duration": 380,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(images).each(image => {\n  cy.get(`img[src=\"${image}\"]`, {\n    timeout: 10000\n  });\n  cy.should(\"be.visible\");\n});\ncy.go(\"back\");",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\n/team\n\nWe failed looking for this file at the path:\n\n/Users/FidelisWairimu/TheJitu/CLTImpact-prod/team\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `template spec`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\n/team\n\nWe failed looking for this file at the path:\n\n/Users/FidelisWairimu/TheJitu/CLTImpact-prod/team\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `template spec`\n    at <unknown> (http://localhost:64789/__cypress/runner/cypress_runner.js:147817:84)\n    at visitFailedByErr (http://localhost:64789/__cypress/runner/cypress_runner.js:147225:12)\n    at <unknown> (http://localhost:64789/__cypress/runner/cypress_runner.js:147800:13)\n    at tryCatcher (http://localhost:64789/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64789/__cypress/runner/cypress_runner.js:16679:31)\n    at Promise._settlePromise (http://localhost:64789/__cypress/runner/cypress_runner.js:16736:18)\n    at Promise._settlePromise0 (http://localhost:64789/__cypress/runner/cypress_runner.js:16781:10)\n    at Promise._settlePromises (http://localhost:64789/__cypress/runner/cypress_runner.js:16857:18)\n    at _drainQueueStep (http://localhost:64789/__cypress/runner/cypress_runner.js:13451:12)\n    at _drainQueue (http://localhost:64789/__cypress/runner/cypress_runner.js:13444:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64789/__cypress/runner/cypress_runner.js:13460:5)\n    at Async.drainQueues (http://localhost:64789/__cypress/runner/cypress_runner.js:13330:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/team.cy.js:15:7)",
+                "diff": null
+              },
+              "uuid": "eb55944d-95f1-454f-b55e-ad2db79c5d60",
+              "parentUUID": "ee7760a6-938c-4609-a641-f1220443c3c6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "eb55944d-95f1-454f-b55e-ad2db79c5d60"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 380,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

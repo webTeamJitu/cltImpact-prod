@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-09T08:17:14.548Z",
+    "end": "2023-08-09T08:17:14.881Z",
+    "duration": 333,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "a588e6a2-ad09-4985-902f-61ea3f677f20",
+      "title": "",
+      "fullFile": "cypress\\e2e\\header.cy.js",
+      "file": "cypress\\e2e\\header.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "736e37ef-d489-45ed-a911-4bc921d2dbeb",
+          "title": "Header section",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check if the logo is visible and is a clickable link.",
+              "fullTitle": "Header section Check if the logo is visible and is a clickable link.",
+              "timedOut": null,
+              "duration": 233,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logo').should(\"be.visible\").find(\"a\", \"img[class='loaded']\").click();",
+              "err": {
+                "message": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Header section`",
+                "estack": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Header section`\n    at Context.eval (webpack:///./cypress/e2e/header.cy.js:3:13)",
+                "diff": null
+              },
+              "uuid": "b4569123-f8cc-430e-a8e7-f779aa5d0098",
+              "parentUUID": "736e37ef-d489-45ed-a911-4bc921d2dbeb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check if there are three links and are clickable.",
+              "fullTitle": "Header section Check if there are three links and are clickable.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#menu').find(\"a\")\n// .click({ multiple: true })\n.should(\"have.length\", 3).each($link => {\n  cy.wrap($link).should(\"have.attr\", \"href\").and(\"not.be.empty\");\n});",
+              "err": {},
+              "uuid": "c360168f-92b7-4cea-aa15-d35b23706cad",
+              "parentUUID": "736e37ef-d489-45ed-a911-4bc921d2dbeb",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b4569123-f8cc-430e-a8e7-f779aa5d0098"
+          ],
+          "pending": [],
+          "skipped": [
+            "c360168f-92b7-4cea-aa15-d35b23706cad"
+          ],
+          "duration": 233,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

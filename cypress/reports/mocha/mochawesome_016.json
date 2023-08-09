@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-09T08:16:18.613Z",
+    "end": "2023-08-09T08:16:19.032Z",
+    "duration": 419,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ae7377c6-3475-473f-9ae1-2ca202db903d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\investments.cy.js",
+      "file": "cypress\\e2e\\investments.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "49d43c11-9d95-48f0-83e2-531dc58706d4",
+          "title": "investments spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check if the Investments heading is visible.",
+              "fullTitle": "investments spec Check if the Investments heading is visible.",
+              "timedOut": null,
+              "duration": 272,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h1').should('be.visible').contains(\"Investments\");",
+              "err": {
+                "message": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `investments spec`",
+                "estack": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `investments spec`\n    at Context.eval (webpack:///./cypress/e2e/investments.cy.js:18:13)",
+                "diff": null
+              },
+              "uuid": "87aaac6b-fb35-4fe9-920a-8d1f6b529b21",
+              "parentUUID": "49d43c11-9d95-48f0-83e2-531dc58706d4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check if the Investments intro text is visible.",
+              "fullTitle": "investments spec Check if the Investments intro text is visible.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h4 > span\").should(\"be.visible\").contains(\"We’ve successfully invested in the next generation of Charlotte entrepreneurs.\");",
+              "err": {},
+              "uuid": "e80f45e2-4c9e-4249-8190-01a4517f7d0d",
+              "parentUUID": "49d43c11-9d95-48f0-83e2-531dc58706d4",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Check if the four Investment images are visible",
+              "fullTitle": "investments spec Check if the four Investment images are visible",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(images).each(image => {\n  cy.get(`img[src=\"${image}\"]`);\n  cy.should(\"be.visible\");\n});\ncy.go(\"back\");",
+              "err": {},
+              "uuid": "f6509ee1-9ad9-47e4-bf0f-7a55764672ea",
+              "parentUUID": "49d43c11-9d95-48f0-83e2-531dc58706d4",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Check if the four Investment content are visible",
+              "fullTitle": "investments spec Check if the four Investment content are visible",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(investments).each(paragraph => {\n  cy.get(\"p\").should(\"be.visible\").contains(paragraph);\n});\ncy.go(\"back\");",
+              "err": {},
+              "uuid": "f20f114e-1aa3-4694-8446-22d347d6a734",
+              "parentUUID": "49d43c11-9d95-48f0-83e2-531dc58706d4",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "87aaac6b-fb35-4fe9-920a-8d1f6b529b21"
+          ],
+          "pending": [],
+          "skipped": [
+            "e80f45e2-4c9e-4249-8190-01a4517f7d0d",
+            "f6509ee1-9ad9-47e4-bf0f-7a55764672ea",
+            "f20f114e-1aa3-4694-8446-22d347d6a734"
+          ],
+          "duration": 272,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

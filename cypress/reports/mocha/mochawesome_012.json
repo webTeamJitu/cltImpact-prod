@@ -1,0 +1,150 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-09T08:16:07.291Z",
+    "end": "2023-08-09T08:16:07.775Z",
+    "duration": 484,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "8a4050bc-97d3-4ad7-a94f-f75d511232be",
+      "title": "",
+      "fullFile": "cypress\\e2e\\contact.cy.js",
+      "file": "cypress\\e2e\\contact.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7d27b85b-4964-4d35-9e03-c9b901e53ed2",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check if Contact heading is visible.",
+              "fullTitle": "template spec Check if Contact heading is visible.",
+              "timedOut": null,
+              "duration": 399,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h1\").contains(\"Contact\").should(\"be.visible\");",
+              "err": {
+                "message": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `template spec`",
+                "estack": "ReferenceError: cypress is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `template spec`\n    at Context.eval (webpack:///./cypress/e2e/contact.cy.js:9:13)",
+                "diff": null
+              },
+              "uuid": "bcdc1b65-0431-43e3-95b8-5dde374c3e15",
+              "parentUUID": "7d27b85b-4964-4d35-9e03-c9b901e53ed2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check if Contact text is visible.",
+              "fullTitle": "template spec Check if Contact text is visible.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h4\").contains(\"Introduce an investment opportunity or learn more about our investment efforts from our team.\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "09471bda-2376-49e8-ad78-b7496cb99fcb",
+              "parentUUID": "7d27b85b-4964-4d35-9e03-c9b901e53ed2",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Check if The three input fields are visible, can be focused and typed into and send button is available and clickable.",
+              "fullTitle": "template spec Check if The three input fields are visible, can be focused and typed into and send button is available and clickable.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"wpforms[fields][0][first]\"]').type(formData.fname).get('input[name=\"wpforms[fields][0][last]\"]').type(formData.lname).get('input[name=\"wpforms[fields][1]\"]').type(formData.email).get('textarea[name=\"wpforms[fields][2]\"]').type(formData.message).get('.g-recaptcha > iframe').should(\"be.visible\").get(\"button[name='wpforms[submit]']\").should(\"be.visible\").focus();",
+              "err": {},
+              "uuid": "5c09927a-b1a3-4414-a65e-1b717a6e98b2",
+              "parentUUID": "7d27b85b-4964-4d35-9e03-c9b901e53ed2",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bcdc1b65-0431-43e3-95b8-5dde374c3e15"
+          ],
+          "pending": [],
+          "skipped": [
+            "09471bda-2376-49e8-ad78-b7496cb99fcb",
+            "5c09927a-b1a3-4414-a65e-1b717a6e98b2"
+          ],
+          "duration": 399,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
