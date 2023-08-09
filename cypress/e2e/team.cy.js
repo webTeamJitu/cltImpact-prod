@@ -27,32 +27,32 @@ describe('template spec', () => {
       .contains("Meet the founding team offering a unique approach to Charlotte investment")
   })
 
-  // it.only('load founders images on the teams page', () => {
-  //   cy.wrap(images).each((image) => {
-  //     cy.get(`img[src="${image}"]`, { timeout: 10000 })
-  //     cy.should("be.visible")
-  //   })
-  //   cy.go("back")
-  // })
+  it.only('load founders images on the teams page', () => {
+    cy.wrap(images).each((image) => {
+      cy.get(`img[src="${image}"]`)
+      cy.should("be.visible")
+    })
+    cy.go("back")
+  })
 
-  it.only("test", () => {
+  // it.only("test", () => {
 
 
-    images.forEach((link) => {
+  //   images.forEach((link) => {
 
-      cy.get(`img[src="${link}"]`, { timeout: 40000 });
+  //     cy.get(`img[src="${link}"]`, { timeout: 40000 });
 
-      cy.request(`${link}`).then(
+  //     cy.request(`${link}`).then(
 
-        (res) => {
+  //       (res) => {
 
-          expect(res.status).to.eq(200);
+  //         expect(res.status).to.eq(200);
 
-        }
+  //       }
 
-      );
+  //     );
 
-    });
+  //   });
 
-  });
+  // });
 })
