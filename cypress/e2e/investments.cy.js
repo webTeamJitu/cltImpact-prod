@@ -47,4 +47,25 @@ describe('investments spec', () => {
     cy.go("back")
   })
 
+  it("Test the font color of the introduction section", () => {
+    cy.get('.palette-0, .palette-0 a')
+      .should('have.css', 'color').then((color) => {
+        cy.request("https://cltimpact.com/").then(response => {
+          // Parse the actual computed color and expected color into RGB values
+          const actualRgb = color.match(/\d+/g).slice(0, 3).join(', ');
+          const expectedRgb = '55, 98, 124';
+          // Compare the RGB values
+          expect(actualRgb, response.status).to.equal(expectedRgb, 200);
+        })
+      });
+  })
+
+  it("Test the font color of the content section", () => {
+    cy.get('p')
+      .should("have.css", "color").then(color => {
+        expect(color).to.equal('rgb(68, 68, 68)');
+
+      })
+  })
+
 })

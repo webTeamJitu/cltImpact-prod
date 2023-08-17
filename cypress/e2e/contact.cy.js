@@ -42,4 +42,31 @@ describe('template spec', () => {
       .focus()
   })
 
+
+  it("Test the background color of the section", () => {
+    cy.get('.tatsu-fqoz0ynbnb922nhy.tatsu-section')
+      .should('have.css', 'background-color').then((backgroundColor) => {
+        cy.request("https://cltimpact.com/").then(response => {
+          // Parse the actual computed color and expected color into RGB values
+          const actualRgb = backgroundColor.match(/\d+/g).slice(0, 3).join(', ');
+          const expectedRgb = '241, 241, 241';
+          // Compare the RGB values
+          expect(actualRgb, response.status).to.equal(expectedRgb, 200);
+        })
+      });
+  })
+
+  it("Test the font color of the section", () => {
+    cy.get(' h4')
+      .should('have.css', 'color').then((color) => {
+        cy.request("https://cltimpact.com/").then(response => {
+          // Parse the actual computed color and expected color into RGB values
+          const actualRgb = color.match(/\d+/g).slice(0, 3).join(', ');
+          const expectedRgb = '119, 119, 130';
+          // Compare the RGB values
+          expect(actualRgb, response.status).to.equal(expectedRgb, 200);
+        })
+      });
+  })
+
 })

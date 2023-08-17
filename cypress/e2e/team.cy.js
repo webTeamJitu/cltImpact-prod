@@ -27,32 +27,60 @@ describe('template spec', () => {
       .contains("Meet the founding team offering a unique approach to Charlotte investment")
   })
 
-  it.only('load founders images on the teams page', () => {
-    cy.wrap(images).each((image) => {
-      cy.get(`img[src="${image}"]`)
-      cy.should("be.visible")
-    })
-    cy.go("back")
+  // it.only('load founders images on the teams page', () => {
+  //   cy.wrap(images).each((image) => {
+  //     cy.get(`img[src="${image}"]`)
+  //     should('have.attr', 'src')
+  //       .should("be.visible",)
+  //   })
+  //   cy.go("back")
+  // })
+
+  it("Test the image of each member", () => {
+    images.forEach((link) => {
+      cy.scrollTo("bottom")
+      cy.get(`img[src="${link}"]`, { timeout: 40000 });
+      cy.request(`${link}`).then(
+        (res) => {
+          expect(res.status).to.eq(200);
+        }
+      );
+    });
+  });
+
+  it("Test the name and role of each member", () => {
+    cy.get(".tatsu-row-has-three-cols ")
+      .find('h5').as("founders")
+    cy.get(".tatsu-row-has-three-cols ")
+      .find("p > span").as("titles")
+
+    cy.get(".tatsu-row-has-four-cols ")
+      .find('h5').as("founders_")
+    cy.get(".tatsu-row-has-four-cols ")
+      .find("p > span").as("titles_")
+
+    cy.get('@founders').eq(0).should('contain', 'Will Alston')
+    cy.get('@titles').eq(0).should('contain', 'Founder')
+
+    cy.get('@founders').eq(1).should('contain', 'Todd Collins')
+    cy.get('@titles').eq(1).should('contain', 'Founder')
+
+    cy.get('@founders').eq(2).should('contain', 'Hal Levinson')
+    cy.get('@titles').eq(2).should('contain', 'Founder')
+
+    cy.get('@founders_').eq(0).should('contain', 'Hugh McColl')
+    cy.get('@titles_').eq(0).should('contain', 'Founder')
+
+    cy.get('@founders_').eq(1).should('contain', 'Matt Magan')
+    cy.get('@titles_').eq(1).should('contain', 'Founder')
+
+    cy.get('@founders_').eq(2).should('contain', 'David Sheffer')
+    cy.get('@titles_').eq(2).should('contain', 'Founder')
+
+    cy.get('@founders_').eq(3).should('contain', 'James Whitner')
+    cy.get('@titles_').eq(3).should('contain', 'Founder')
+
+    cy.get('@founders').eq(3).should('contain', 'Curtis Griner')
+    cy.get('@titles').eq(3).should('contain', 'General Counsel')
   })
-
-  // it.only("test", () => {
-
-
-  //   images.forEach((link) => {
-
-  //     cy.get(`img[src="${link}"]`, { timeout: 40000 });
-
-  //     cy.request(`${link}`).then(
-
-  //       (res) => {
-
-  //         expect(res.status).to.eq(200);
-
-  //       }
-
-  //     );
-
-  //   });
-
-  // });
 })
